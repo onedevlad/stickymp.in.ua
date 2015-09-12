@@ -6,8 +6,15 @@ head
 	link(rel="stylesheet", href="styles/custom.css")
 body
 	.container-fluid.screen-1
-		.row
-			.col-md-4.header-info-left
-				img(src="images/np.png", alt="")
-				span Доставка по всей Украине
-
+		.overlay
+			.row-fluid.header-info
+				.col-md-4.header-info-left.pull-left
+					img(src="images/np.png", alt="")
+					span Доставка по всей Украине
+				.col-md-2.pull-right.header-info-right
+					span +38 (066) 881 06 22
+					button Заказать сейчас
+			.row-fluid.title
+				span.main-title Sticky Map
+				span.secondary-title Надоел бардак в машине?
+				span.secondary-title "Липкие" коврики решат эту проблему раз и навсегда!
