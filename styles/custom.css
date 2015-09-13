@@ -3069,21 +3069,24 @@ input[type="button"].btn-block {
   margin: 0;
   padding: 0;
 }
-button {
+.order {
   color: #fff;
   background: #c30000;
   outline: none;
   border: none;
-  padding: 5% 8%;
+  padding: 0.5em 0.8em;
   text-shadow: 1px 1px 1px #262527;
 }
-button:hover {
+.order:hover {
   background: #910000;
 }
 html,
 body {
   width: 100%;
   height: 100%;
+}
+.container-fluid {
+  background: #eae8eb;
 }
 .screen-1 {
   padding: 0;
@@ -3135,4 +3138,32 @@ body {
 }
 .screen-1 .overlay .title .secondary-title {
   font-size: 1.5em;
+}
+.screen-2 .pad-price {
+  margin-top: 5%;
+}
+.screen-2 .pad-price .pad-image img {
+  width: 100%;
+}
+.screen-2 .pad-price .pad-text {
+  text-align: center;
+}
+.screen-2 .pad-price .pad-text .old-price,
+.screen-2 .pad-price .pad-text .new-price,
+.screen-2 .pad-price .pad-text button {
+  display: block;
+}
+.screen-2 .pad-price .pad-text .old-price {
+  font-size: 1.25em;
+}
+.screen-2 .pad-price .pad-text .old-price .overlined {
+  text-decoration: line-through;
+}
+.screen-2 .pad-price .pad-text .new-price {
+  font-size: 6em;
+  color: #910000;
+}
+.screen-2 .pad-price .pad-text button {
+  margin: 0 auto;
+  font-size: 2em;
 }
