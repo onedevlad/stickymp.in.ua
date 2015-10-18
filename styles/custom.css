@@ -3080,6 +3080,34 @@ input[type="button"].btn-block {
 .order:hover {
   background: #910000;
 }
+.divider {
+  margin-top: 10%;
+  position: relative;
+  height: 15px;
+}
+.divider .left,
+.divider .right {
+  position: absolute;
+  top: 7px;
+  width: 47%;
+  height: 2px;
+  background: #262527;
+}
+.divider .left {
+  left: 0;
+}
+.divider .right {
+  right: 0;
+}
+.divider .inner {
+  width: 15px;
+  height: 15px;
+  background: #262527;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 7px);
+}
 html,
 body {
   width: 100%;
@@ -3125,7 +3153,7 @@ body {
   margin-top: 5%;
 }
 .screen-1 .overlay .title {
-  margin-top: 20%;
+  margin-top: 25vh;
   text-align: center;
   text-shadow: 1px 1px 1px #262527;
 }
@@ -3142,8 +3170,14 @@ body {
 .screen-2 .pad-price {
   margin-top: 5%;
 }
-.screen-2 .pad-price .pad-image img {
-  width: 100%;
+.screen-2 .pad-price .pad-image .pad {
+  width: 80%;
+}
+.screen-2 .pad-price .pad-image .discount {
+  width: 30%;
+  position: absolute;
+  right: 5%;
+  top: 10%;
 }
 .screen-2 .pad-price .pad-text {
   text-align: center;
@@ -3154,16 +3188,133 @@ body {
   display: block;
 }
 .screen-2 .pad-price .pad-text .old-price {
+  margin-top: 20%;
   font-size: 1.25em;
 }
 .screen-2 .pad-price .pad-text .old-price .overlined {
   text-decoration: line-through;
 }
 .screen-2 .pad-price .pad-text .new-price {
+  margin-top: 2%;
   font-size: 6em;
   color: #910000;
 }
 .screen-2 .pad-price .pad-text button {
-  margin: 0 auto;
+  margin: 20% auto 0 auto;
   font-size: 2em;
+}
+.screen-2 .work-description-title {
+  margin-top: 125px;
+}
+.screen-2 .work-description-title h1 {
+  text-align: center;
+}
+.screen-2 .work-description {
+  margin-top: 5%;
+  text-align: center;
+}
+.screen-2 .work-description div img {
+  width: 30%;
+}
+.screen-2 .work-description div span {
+  display: block;
+  margin-top: 5%;
+  font-size: 1.25em;
+}
+@media (max-width: 768px) {
+  .work-description div {
+    margin-top: 10%;
+  }
+  .work-description div img {
+    width: 20% !important;
+  }
+}
+.screen-3 h1 {
+  text-align: center;
+  margin: 8% 0;
+}
+.screen-3 .properties {
+  margin-bottom: 15%;
+}
+.screen-3 .properties .left-column h3,
+.screen-3 .properties .right-column h3 {
+  text-align: center;
+  font-weight: bold;
+}
+.screen-3 .properties .left-column table {
+  margin: 10% 5% 0 5%;
+  width: 90%;
+  font-size: 1.5em;
+}
+.screen-3 .properties .left-column table td {
+  padding: 0.5em 0;
+}
+.screen-3 .properties .left-column h5 {
+  margin: 12% 10% 8% 10%;
+  width: 80%;
+  line-height: 200%;
+  font-weight: bold;
+  text-align: center;
+}
+.screen-3 .properties .left-column ul {
+  line-height: 2em;
+  margin-left: 30px;
+  font-size: 1.1em;
+}
+.screen-3 .properties .middle-column img {
+  width: 100%;
+}
+.screen-3 .properties .right-column {
+  text-align: center;
+}
+.screen-3 .properties .right-column .old-price,
+.screen-3 .properties .right-column .new-price,
+.screen-3 .properties .right-column button {
+  display: block;
+}
+.screen-3 .properties .right-column .old-price {
+  margin-top: 30%;
+}
+.screen-3 .properties .right-column .old-price .overlined {
+  text-decoration: line-through;
+}
+.screen-3 .properties .right-column .new-price {
+  margin-top: 2%;
+  font-size: 6em;
+  color: #910000;
+}
+.screen-3 .properties .right-column button {
+  margin: 20% auto 0 auto;
+  font-size: 2em;
+}
+.screen-4 {
+  padding: 0;
+  height: 70%;
+  background-image: url("../images/benefits_bg.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.screen-4 .overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+.screen-4 .benefits {
+  padding: 1.5% 1.5% 1.5% 50px;
+  width: 60%;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+  color: #fff;
+  font-size: 1.25em;
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  bottom: 2%;
+  left: 20%;
+}
+.screen-4 .benefits li {
+  list-style-image: url("../images/mark.png");
 }

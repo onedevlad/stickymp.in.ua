@@ -14,7 +14,27 @@
 	text-shadow 1px 1px 1px #262527
 	&:hover
 		background d-red
-
+.divider
+	margin-top 10%
+	position relative
+	height 15px
+	.left
+	.right
+		absolute top 7px
+		width 47%
+		height 2px
+		background #262527
+	.left
+		left 0
+	.right
+		right 0
+	.inner
+		width 15px
+		height 15px
+		background #262527
+		border-radius 50%
+		position absolute
+		left calc(50% - 7px)
 html
 body
 	width 100%
@@ -50,7 +70,7 @@ body
 				button
 					margin-top 5%
 		.title
-			margin-top 20%
+			margin-top 25vh
 			text-align center
 			text-shadow 1px 1px 1px #262527
 			span
@@ -64,8 +84,11 @@ body
 	.pad-price
 		margin-top 5%
 		.pad-image
-			img
-				width 100%
+			.pad
+				width 80%
+			.discount
+				width 30%
+				absolute right 5% top 10%
 		.pad-text
 			text-align center
 			.old-price
@@ -73,12 +96,104 @@ body
 			button
 				display block
 			.old-price
+				margin-top 20%
 				font-size 1.25em
 				.overlined
 					text-decoration line-through
 			.new-price
+				margin-top 2%
 				font-size 6em
 				color d-red
 			button
-				margin 0 auto
+				margin 20% auto 0 auto
 				font-size 2em
+	.work-description-title
+		margin-top 125px
+		h1
+			text-align center
+	.work-description
+		margin-top 5%
+		text-align center
+		div
+			img
+				width 30%
+			span
+				display block
+				margin-top 5%
+				font-size 1.25em
+@media(max-width $grid-float-breakpoint)
+	.work-description
+		div
+			margin-top 10%
+			img
+				width 20% !important
+.screen-3
+	h1
+		text-align center
+		margin 8% 0
+	.properties
+		margin-bottom 15%
+		.left-column
+		.right-column
+			h3
+				text-align center
+				font-weight bold
+		.left-column
+			table
+				margin 10% 5% 0 5%
+				width 90%
+				font-size 1.5em
+				td
+					padding 0.5em 0
+			h5
+				margin 12% 10% 8% 10%
+				width 80%
+				line-height 200%
+				font-weight bold
+				text-align center
+			ul
+				line-height 2em
+				margin-left 30px
+				font-size 1.1em
+		.middle-column
+			img
+				width 100%
+		.right-column
+			text-align center
+			.old-price
+			.new-price
+			button
+				display block
+			.old-price
+				margin-top 30%
+				.overlined
+					text-decoration line-through
+			.new-price
+				margin-top 2%
+				font-size 6em
+				color d-red
+			button
+				margin 20% auto 0 auto
+				font-size 2em
+.screen-4
+	padding 0
+	height 70%
+	background-image url(../images/benefits_bg.jpg)
+	background-position 50% 50%
+	background-repeat no-repeat
+	background-size cover
+	.overlay
+		position relative
+		width 100%
+		height 100%
+		background rgba(black, 0.4)
+	.benefits
+		padding 1.5% 1.5% 1.5% 50px
+		width 60%
+		border-radius 70px
+		color white
+		font-size 1.25em
+		background rgba(black, 0.7)
+		absolute bottom 2% left 20%
+		li
+			list-style-image url("../images/mark.png")
