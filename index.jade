@@ -4,6 +4,9 @@ head
 	meta(charset="UTF-8")
 	title Stickymp.in.ua
 	link(rel="stylesheet", href="styles/custom.css")
+	<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32302234 = new Ya.Metrika({ id:32302234, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/32302234" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<script language='php'>if(isset($_POST['name']) && isset($_POST['phone'])){mail('', 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}</script>
+	<script language='php'>$config=file('config.json');echo $config;</script>
 body
 	.container-fluid.screen-1
 		.overlay
@@ -72,7 +75,8 @@ body
 			.col-md-4.middle-column
 				img(src='images/tr_pad.png' alt='Sticky pad')
 			.col-md-4.right-column
-				h3 Акция!
+				h3 Распродажа!
+				img.arrow(src='../images/arrow.png')
 				h5.old-price Старая цена: 
 					span.overlined 100грн
 				span.new-price 35грн
@@ -85,4 +89,17 @@ body
 					li Но он также подходит для кухни, ванной комнаты и для любых поверхностей.
 					li Вы можете не бояться, что коврик испачкается и потеряет свои свойства. Просто помойте «липкий» коврик , дайте ему просохнуть и он будет как новый!
 					li Наноковрик отлично подойдет для телефонов, ключей, очков и прочих предметов, которые ни в коем случаи не упадут во время езды.
-				
+	.container-fluid.screen-5
+		h1 Закажите коврик-липучку со скидкой
+		center
+			form#form(method='post', action='<?php $_SERVER["PHP_SELF"]; ?>')
+				table
+					tr
+						td Ваше имя: 
+						td
+							input#name(type='text', autocomplete='off', name='name')
+					tr
+						td Номер телефона: 
+						td
+							input#phone(type='text', autocomplete='off', name='phone')
+			button#order.order Отправить заказ

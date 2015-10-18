@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Stickymp.in.ua</title>
-  <link rel="stylesheet" href="styles/custom.css">
+  <link rel="stylesheet" href="styles/custom.css"><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32302234 = new Ya.Metrika({ id:32302234, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/32302234" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <script language='php'>if(isset($_POST['name']) && isset($_POST['phone'])){mail('', 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}</script>
+  <script language='php'>$config=file('config.json');echo $config;</script>
 </head>
 <body>
   <div class="container-fluid screen-1">
@@ -70,7 +72,7 @@
       </div>
       <div class="col-md-4 middle-column"><img src="images/tr_pad.png" alt="Sticky pad"></div>
       <div class="col-md-4 right-column">
-        <h3>Акция!</h3>
+        <h3>Распродажа!</h3><img src="../images/arrow.png" class="arrow">
         <h5 class="old-price">Старая цена: <span class="overlined">100грн</span></h5><span class="new-price">35грн</span>
         <button class="order">Заказать сейчас</button>
       </div>
@@ -87,5 +89,27 @@
         </ul>
       </div>
     </div>
+  </div>
+  <div class="container-fluid screen-5">
+    <h1>Закажите коврик-липучку со скидкой</h1>
+    <center>
+      <form id="form" method="post" action="&lt;?php $_SERVER[&quot;PHP_SELF&quot;]; ?&gt;">
+        <table>
+          <tr>
+            <td>Ваше имя: </td>
+            <td>
+              <input id="name" type="text" autocomplete="off" name="name">
+            </td>
+          </tr>
+          <tr>
+            <td>Номер телефона: </td>
+            <td>
+              <input id="phone" type="text" autocomplete="off" name="phone">
+            </td>
+          </tr>
+        </table>
+      </form>
+      <button id="order" class="order">Отправить заказ</button>
+    </center>
   </div>
 </body>
