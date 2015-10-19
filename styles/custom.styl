@@ -89,6 +89,12 @@ body
 			.discount
 				width 30%
 				absolute right 5% top 10%
+				.discount-img
+					width 100%
+				.discount-text
+					color white
+					font-size 2em
+					absolute top 28% left 10%
 		.pad-text
 			text-align center
 			.old-price
@@ -197,6 +203,11 @@ body
 		absolute bottom 2% left 20%
 		li
 			list-style-image url("../images/mark.png")
+@media(max-width $grid-float-breakpoint)
+	.benefits
+		left 0 !important
+		width 100% !important
+		font-size 1em !important
 .screen-5
 	h1
 		text-align center
@@ -204,10 +215,11 @@ body
 	center
 		font-size 1.5em
 		form table
-			margin 9% 0 5% 0
+			margin 12% 0 5% 0
 			td
 				padding 0.5em
 				input
 					padding 0.2em
 		button
-			margin-bottom 20%
+			margin-top 7%
+			margin-bottom 10%

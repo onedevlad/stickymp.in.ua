@@ -1,12 +1,23 @@
 doctype
 html(lang="uk")
 head
-	meta(charset="UTF-8")
-	title Stickymp.in.ua
+	<?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
+	<?php if(isset($_POST['name']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?>
+
+	<script>var originalPrice=parseFloat('<?php echo $parsed["original-price"]; ?>') || 100; var discount=parseFloat('<?php echo $parsed["discount-percent"]; ?>') || 65;</script>
+	script(type="text/javascript", async="", src="https://mc.yandex.ru/metrika/watch.js")
+	script(src='scripts/jquery.js')
+	script(src='scripts/mask.js')
+	script(defer, src='scripts/custom.js')
+
 	link(rel="stylesheet", href="styles/custom.css")
-	<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32302234 = new Ya.Metrika({ id:32302234, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/32302234" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<script language='php'>if(isset($_POST['name']) && isset($_POST['phone'])){mail('', 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}</script>
-	<script language='php'>$config=file('config.json');echo $config;</script>
+	link(rel="icon", href="favicon.ico", type="image/x-icon")
+
+	meta(charset="UTF-8")
+	meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+
+	title Stickymp.in.ua
+
 body
 	.container-fluid.screen-1
 		.overlay
@@ -25,11 +36,20 @@ body
 		.row.pad-price
 			.col-md-3.col-md-offset-2.col-xs-8.col-xs-offset-3.pad-image
 				img.pad(src="images/pad.png", alt="")
-				img.discount(src="images/discount.png", alt="")
+				.discount
+					img.discount-img(src="images/discount.png", alt="")
+					span.discount-text
+						| - 
+						span.discount-value 65
+						| %
 			.col-md-3.col-md-offset-1.pad-text
 				span.old-price Старая цена: 
-					span.overlined 100грн
-				span.new-price 35грн
+					span.overlined
+						span.original-price-value 100
+						span грн
+				span.new-price
+					span.new-price-value 35
+					span грн
 				button.order Заказать сейчас
 		.row.work-description-title
 			h1.col-lg-12 Как мы работаем
@@ -77,9 +97,13 @@ body
 			.col-md-4.right-column
 				h3 Распродажа!
 				img.arrow(src='../images/arrow.png')
-				h5.old-price Старая цена: 
-					span.overlined 100грн
-				span.new-price 35грн
+				h5.old-price Старая цена:
+					span.overlined
+						span.original-price-value 100
+						span грн
+				span.new-price
+					span.new-price-value 35
+					span грн
 				button.order Заказать сейчас
 	.container-fluid.screen-4
 		.overlay
@@ -89,10 +113,10 @@ body
 					li Но он также подходит для кухни, ванной комнаты и для любых поверхностей.
 					li Вы можете не бояться, что коврик испачкается и потеряет свои свойства. Просто помойте «липкий» коврик , дайте ему просохнуть и он будет как новый!
 					li Наноковрик отлично подойдет для телефонов, ключей, очков и прочих предметов, которые ни в коем случаи не упадут во время езды.
-	.container-fluid.screen-5
+	.container-fluid.screen-5#order-screen
 		h1 Закажите коврик-липучку со скидкой
 		center
-			form#form(method='post', action='<?php $_SERVER["PHP_SELF"]; ?>')
+			form#form(method='post', action='<?php echo $_SERVER["PHP_SELF"]; ?>')
 				table
 					tr
 						td Ваше имя: 

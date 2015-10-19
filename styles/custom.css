@@ -3179,6 +3179,16 @@ body {
   right: 5%;
   top: 10%;
 }
+.screen-2 .pad-price .pad-image .discount .discount-img {
+  width: 100%;
+}
+.screen-2 .pad-price .pad-image .discount .discount-text {
+  color: #fff;
+  font-size: 2em;
+  position: absolute;
+  top: 28%;
+  left: 10%;
+}
 .screen-2 .pad-price .pad-text {
   text-align: center;
 }
@@ -3318,6 +3328,13 @@ body {
 .screen-4 .benefits li {
   list-style-image: url("../images/mark.png");
 }
+@media (max-width: 768px) {
+  .benefits {
+    left: 0 !important;
+    width: 100% !important;
+    font-size: 1em !important;
+  }
+}
 .screen-5 h1 {
   text-align: center;
   margin-top: 10%;
@@ -3326,7 +3343,7 @@ body {
   font-size: 1.5em;
 }
 .screen-5 center form table {
-  margin: 9% 0 5% 0;
+  margin: 12% 0 5% 0;
 }
 .screen-5 center form table td {
   padding: 0.5em;
@@ -3335,5 +3352,6 @@ body {
   padding: 0.2em;
 }
 .screen-5 center button {
-  margin-bottom: 20%;
+  margin-top: 7%;
+  margin-bottom: 10%;
 }
