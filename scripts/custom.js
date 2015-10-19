@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$('#order').click(function(){
 		if($('#name').val() !== '' && $('#phone').val() !== ''){
 			alert('Спасибо, Ваш заказ принят!');
-			yaCounter32302234.reachGoal('order');
+			//yaCounter32302234.reachGoal('order');
 			$('#form').submit();
 		}
 		else{

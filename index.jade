@@ -1,10 +1,10 @@
+<?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
+<?php if(isset($_POST['name']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang="uk")
 head
-	<?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-	<?php if(isset($_POST['name']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?>
 
-	<script>var originalPrice=parseFloat('<?php echo $parsed["original-price"]; ?>') || 100; var discount=parseFloat('<?php echo $parsed["discount-percent"]; ?>') || 65;</script>
+	<script>var originalPrice=parseFloat('<?php echo $parsed["original-price"]; ?>') || 100; var discount=parseFloat('<?php echo $parsed["discount-percent"]; ?>');</script>
 	script(type="text/javascript", async="", src="https://mc.yandex.ru/metrika/watch.js")
 	script(src='scripts/jquery.js')
 	script(src='scripts/mask.js')
@@ -96,7 +96,7 @@ body
 				img(src='images/tr_pad.png' alt='Sticky pad')
 			.col-md-4.right-column
 				h3 Распродажа!
-				img.arrow(src='../images/arrow.png')
+				img.arrow(src='images/arrow.png')
 				h5.old-price Старая цена:
 					span.overlined
 						span.original-price-value 100
@@ -116,7 +116,7 @@ body
 	.container-fluid.screen-5#order-screen
 		h1 Закажите коврик-липучку со скидкой
 		center
-			form#form(method='post', action='<?php echo $_SERVER["PHP_SELF"]; ?>')
+			form#form(method='post')
 				table
 					tr
 						td Ваше имя: 
