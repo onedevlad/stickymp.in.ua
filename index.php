@@ -1,6 +1,6 @@
 
 <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-<?php if(isset($_POST['name']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?><!DOCTYPE html>
+<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?><!DOCTYPE html>
 <html lang="uk"></html>
 <head><script>var originalPrice=parseFloat('<?php echo $parsed["original-price"]; ?>') || 100; var discount=parseFloat('<?php echo $parsed["discount-percent"]; ?>');</script>
   <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
@@ -104,13 +104,19 @@
       <form id="form" method="post">
         <table>
           <tr>
-            <td>Ваше имя: </td>
+            <td>Ваше имя:</td>
             <td>
               <input id="name" type="text" autocomplete="off" name="name">
             </td>
           </tr>
           <tr>
-            <td>Номер телефона: </td>
+            <td>Ваша фамилия:</td>
+            <td>
+              <input id="surname" type="text" autocomplete="off" name="surname">
+            </td>
+          </tr>
+          <tr>
+            <td>Номер телефона:</td>
             <td>
               <input id="phone" type="text" autocomplete="off" name="phone">
             </td>

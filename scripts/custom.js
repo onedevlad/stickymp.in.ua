@@ -6,7 +6,7 @@ $(document).ready(function(){
 	});
 
 	$('#order').click(function(){
-		if($('#name').val() !== '' && $('#phone').val() !== ''){
+		if($('#name').val() !== '' && $('#phone').val() !== '' && $('#surname').val() !== ''){
 			alert('Спасибо, Ваш заказ принят!');
 			//yaCounter32302234.reachGoal('order');
 			$('#form').submit();

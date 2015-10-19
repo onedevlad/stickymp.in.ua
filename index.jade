@@ -1,5 +1,5 @@
 <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-<?php if(isset($_POST['name']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?>
+<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang="uk")
 head
@@ -119,11 +119,15 @@ body
 			form#form(method='post')
 				table
 					tr
-						td Ваше имя: 
+						td Ваше имя:
 						td
 							input#name(type='text', autocomplete='off', name='name')
 					tr
-						td Номер телефона: 
+						td Ваша фамилия:
+						td
+							input#surname(type='text', autocomplete='off', name='surname')
+					tr
+						td Номер телефона:
 						td
 							input#phone(type='text', autocomplete='off', name='phone')
 			button#order.order Отправить заказ
