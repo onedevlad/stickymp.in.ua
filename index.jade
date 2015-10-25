@@ -2,132 +2,132 @@
 <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone'])){mail($parsed['mail'], 'Новый заказ!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) stickypad!', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang="uk")
-head
+	head
 
-	<script>var originalPrice=parseFloat('<?php echo $parsed["original-price"]; ?>') || 100; var discount=parseFloat('<?php echo $parsed["discount-percent"]; ?>');</script>
-	script(type="text/javascript", async="", src="https://mc.yandex.ru/metrika/watch.js")
-	script(src='scripts/jquery.js')
-	script(src='scripts/mask.js')
-	script(defer, src='scripts/custom.js')
+		<script>var originalPrice=parseFloat('<?php echo $parsed["original-price"]; ?>') || 100; var discount=parseFloat('<?php echo $parsed["discount-percent"]; ?>');</script>
+		script(type="text/javascript", async="", src="https://mc.yandex.ru/metrika/watch.js")
+		script(src='scripts/jquery.js')
+		script(src='scripts/mask.js')
+		script(defer, src='scripts/custom.js')
 
-	link(rel="stylesheet", href="styles/custom.css")
-	link(rel="icon", href="favicon.ico", type="image/x-icon")
+		link(rel="stylesheet", href="styles/custom.css")
+		link(rel="icon", href="favicon.ico", type="image/x-icon")
 
-	meta(charset="UTF-8")
-	meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+		meta(charset="UTF-8")
+		meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
 
-	title Stickymp.in.ua
+		title Stickymp.in.ua
 
-body
-	.container-fluid.screen-1
-		.overlay
-			.row.header-info
-				.col-md-4.header-info-left.pull-left
-					img(src="images/np.png", alt="")
-					span Доставка по всей Украине
-				.col-md-2.pull-right.header-info-right
-					span +38 (066) 881 06 22
+	body
+		.container-fluid.screen-1
+			.overlay
+				.row.header-info
+					.col-md-4.header-info-left.pull-left
+						img(src="images/np.png", alt="")
+						span Доставка по всей Украине
+					.col-md-2.pull-right.header-info-right
+						span +38 (066) 881 06 22
+						button.order Заказать сейчас
+				.row.title
+					span.main-title Sticky Map
+					span.secondary-title Надоел бардак в машине?
+					span.secondary-title "Липкие" коврики решат эту проблему раз и навсегда!
+		.container-fluid.screen-2
+			.row.pad-price
+				.col-md-3.col-md-offset-2.col-xs-8.col-xs-offset-3.pad-image
+					img.pad(src="images/pad.png", alt="")
+					.discount
+						img.discount-img(src="images/discount.png", alt="")
+						nobr.discount-text
+							| -
+							span.discount-value 65
+							| %
+				.col-md-3.col-md-offset-1.pad-text
+					span.old-price Старая цена: 
+						span.overlined
+							span.original-price-value 100
+							span грн
+					span.new-price
+						span.new-price-value 35
+						span грн
 					button.order Заказать сейчас
-			.row.title
-				span.main-title Sticky Map
-				span.secondary-title Надоел бардак в машине?
-				span.secondary-title "Липкие" коврики решат эту проблему раз и навсегда!
-	.container-fluid.screen-2
-		.row.pad-price
-			.col-md-3.col-md-offset-2.col-xs-8.col-xs-offset-3.pad-image
-				img.pad(src="images/pad.png", alt="")
-				.discount
-					img.discount-img(src="images/discount.png", alt="")
-					span.discount-text
-						| - 
-						span.discount-value 65
-						| %
-			.col-md-3.col-md-offset-1.pad-text
-				span.old-price Старая цена: 
-					span.overlined
-						span.original-price-value 100
+			.row.work-description-title
+				h1.col-lg-12 Как мы работаем
+			.row.work-description
+				.col-md-3
+					img(src="images/form.png", alt="")
+					span Заполните форму заказа
+				.col-md-3
+					img(src="images/reply.png", alt="")
+					span Мы свяжемся с вами в течение часа
+				.col-md-3
+					img(src="images/edit.png", alt="")
+					span Уточните детали заказа
+				.col-md-3
+					img(src="images/deliever.png", alt="")
+					span Получите ваш заказ
+			.row.divider
+				.col-lg-12
+					.left
+					.inner
+					.right
+		.container-fluid.screen-3
+			h1 Универсальность и удобство!
+			.row.properties
+				.col-md-4.left-column
+					h3 Харатеристика
+					table
+						tr
+							td Материал:
+							td.right-row силикон
+						tr
+							td Размер:
+							td.right-row 14см х 8см x 2.5мм
+						tr
+							td Цвета:
+							td.right-row черный, прозрачный
+					h5 Особенности противоскользящего наноковрика:
+					ul
+						li Подходит для любой приборной панели
+						li Многоразовое использование
+						li Коврик изготовлен без использования клейких материалов
+						li Коврик изготовлен без использования магнитов
+				.col-md-4.middle-column
+					img(src='images/tr_pad.png' alt='Sticky pad')
+				.col-md-4.right-column
+					h3 Распродажа!
+					img.arrow(src='images/arrow.png')
+					h5.old-price Старая цена:
+						span.overlined
+							span.original-price-value 100
+							span грн
+					span.new-price
+						span.new-price-value 35
 						span грн
-				span.new-price
-					span.new-price-value 35
-					span грн
-				button.order Заказать сейчас
-		.row.work-description-title
-			h1.col-lg-12 Как мы работаем
-		.row.work-description
-			.col-md-3
-				img(src="images/form.png", alt="")
-				span Заполните форму заказа
-			.col-md-3
-				img(src="images/reply.png", alt="")
-				span Мы свяжемся с вами в течение часа
-			.col-md-3
-				img(src="images/edit.png", alt="")
-				span Уточните детали заказа
-			.col-md-3
-				img(src="images/deliever.png", alt="")
-				span Получите ваш заказ
-		.row.divider
-			.col-lg-12
-				.left
-				.inner
-				.right
-	.container-fluid.screen-3
-		h1 Универсальность и удобство!
-		.row.properties
-			.col-md-4.left-column
-				h3 Харатеристика
-				table
-					tr
-						td Материал:
-						td.right-row силикон
-					tr
-						td Размер:
-						td.right-row 14см х 8см x 2.5мм
-					tr
-						td Цвета:
-						td.right-row черный, прозрачный
-				h5 Особенности противоскользящего наноковрика:
-				ul
-					li Подходит для любой приборной панели
-					li Многоразовое использование
-					li Коврик изготовлен без использования клейких материалов
-					li Коврик изготовлен без использования магнитов
-			.col-md-4.middle-column
-				img(src='images/tr_pad.png' alt='Sticky pad')
-			.col-md-4.right-column
-				h3 Распродажа!
-				img.arrow(src='images/arrow.png')
-				h5.old-price Старая цена:
-					span.overlined
-						span.original-price-value 100
-						span грн
-				span.new-price
-					span.new-price-value 35
-					span грн
-				button.order Заказать сейчас
-	.container-fluid.screen-4
-		.overlay
-			.benefits
-				ul
-					li Разработан учеными NASA для полетов в космос Sticky map очень практичен на панели автомобилей.
-					li Но он также подходит для кухни, ванной комнаты и для любых поверхностей.
-					li Вы можете не бояться, что коврик испачкается и потеряет свои свойства. Просто помойте «липкий» коврик , дайте ему просохнуть и он будет как новый!
-					li Наноковрик отлично подойдет для телефонов, ключей, очков и прочих предметов, которые ни в коем случаи не упадут во время езды.
-	.container-fluid.screen-5#order-screen
-		h1 Закажите коврик-липучку со скидкой
-		center
-			form#form(method='post')
-				table
-					tr
-						td Ваше имя:
-						td
-							input#name(type='text', autocomplete='off', name='name')
-					tr
-						td Ваша фамилия:
-						td
-							input#surname(type='text', autocomplete='off', name='surname')
-					tr
-						td Номер телефона:
-						td
-							input#phone(type='text', autocomplete='off', name='phone')
-			button#order.order Отправить заказ
+					button.order Заказать сейчас
+		.container-fluid.screen-4
+			.overlay
+				.benefits
+					ul
+						li Разработан учеными NASA для полетов в космос Sticky map очень практичен на панели автомобилей.
+						li Но он также подходит для кухни, ванной комнаты и для любых поверхностей.
+						li Вы можете не бояться, что коврик испачкается и потеряет свои свойства. Просто помойте «липкий» коврик , дайте ему просохнуть и он будет как новый!
+						li Наноковрик отлично подойдет для телефонов, ключей, очков и прочих предметов, которые ни в коем случаи не упадут во время езды.
+		.container-fluid.screen-5#order-screen
+			h1 Закажите коврик-липучку со скидкой
+			center
+				form#form(method='post')
+					table
+						tr
+							td Ваше имя:
+							td
+								input#name(type='text', autocomplete='off', name='name')
+						tr
+							td Ваша фамилия:
+							td
+								input#surname(type='text', autocomplete='off', name='surname')
+						tr
+							td Номер телефона:
+							td
+								input#phone(type='text', autocomplete='off', name='phone')
+				button#order.order Отправить заказ
