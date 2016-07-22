@@ -21,6 +21,7 @@ $(document).ready(function(){
 	};
 
 	$('.order').click(order);
+	if(isNaN(discount)) discount = 35
 	var newPrice=parseInt((originalPrice-(originalPrice/100)*discount), 10);
 	$('.original-price-value').html(originalPrice);
 	$('.new-price-value').html(newPrice);
